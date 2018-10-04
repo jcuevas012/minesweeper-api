@@ -4,12 +4,22 @@ const { Schema } = mongoose
 
 
 const gameSchema = new Schema({
-    game: Array,
+    play: Array,
+    row: Number,
+    col: Number,
     startTime: {
         type: Date,
         required: true
     },
-    pause: Boolean,
+    endTime: Date,
+    isOver: {
+        type: Boolean,
+        default: false
+    },
+    pause: {
+        type: Boolean,
+        default: false
+    },
     userId: String,
 })
 
