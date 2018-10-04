@@ -19,7 +19,7 @@ function generatePosition (row, col) {
 }
 
 
-function setBoom(matrix, num) {
+function setMines(matrix, num) {
     
     const row = matrix.length
     const col = matrix[0].length
@@ -44,18 +44,18 @@ function generateGame(level) {
         matrix.col = 20,
         matrix.row = 20,
         matrix.arr = generatePosition(matrix.row, matrix.col)
-        matrix.arr = setBoom(matrix.arr, 14)
+        matrix.arr = setMines(matrix.arr, 14)
         return matrix
 
     } else if (level == 'pro') {
         matrix.col = 30,
         matrix.row = 30,
         matrix.arr = generatePosition(matrix.row, matrix.col)
-        matrix.arr = setBoom(matrix.arr, 21)
+        matrix.arr = setMines(matrix.arr, 21)
         return matrix
     } else {
          matrix.arr = generatePosition(matrix.row, matrix.col)
-         matrix.arr = setBoom(matrix.arr, 7)
+         matrix.arr = setMines(matrix.arr, 7)
          return matrix
     }
     
@@ -93,7 +93,7 @@ app.post('/open', async (req, res) => {
         game.isOver = true
         game.endTime = Date()
         const data = await game.save()
-        res.send({ value, message: 'Game Over ', game: game })  
+        res.send({ value, message: 'Game Over ', game: data })  
     } 
     res.send({ value, message: 'Keep going !'})
 
