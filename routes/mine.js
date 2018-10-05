@@ -90,7 +90,7 @@ app.post('/open', async (req, res) => {
     
     const game = await Game.findById(req.body.id)
     
-    if (game.isOver || game.pause) res.status(500).send({ message: 'The game is over or pause, you can not play'})
+    if (!game && game.isOver || game.pause) res.status(500).send({ message: 'The game is over or pause, you can not play'})
     
 
     value = game.play[row][col]
