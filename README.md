@@ -3,6 +3,7 @@
 
 Minesweeper API 
 
+https://jminesweeper-api.herokuapp.com/
 
 ## Usage
 
