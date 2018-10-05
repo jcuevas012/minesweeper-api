@@ -1,0 +1,3 @@
+[submodule "minesweeper-client"]
+	path = minesweeper-client
+	url = https://github.com/jcuevas012/minesweeper-client.git
